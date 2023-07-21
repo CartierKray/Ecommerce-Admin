@@ -9,7 +9,6 @@ import { useForm } from "react-hook-form";
 import { useParams, useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { useOrigin } from "@/hooks/use-origin";
 import { Heading } from "@/components/ui/heading";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -24,7 +23,6 @@ import {
 } from "@/components/ui/form";
 import axios from "axios";
 import { AlertModal } from "@/components/modals/alert-modal";
-import { ApiAlert } from "@/components/ui/api-alert";
 import ImageUpload from "@/components/ui/image-upload";
 
 const formSchema = z.object({
@@ -43,7 +41,6 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
 }) => {
   const params = useParams();
   const router = useRouter();
-  const origin = useOrigin();
 
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
